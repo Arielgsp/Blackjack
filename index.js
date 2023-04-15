@@ -4,12 +4,20 @@ let restNumber = document.getElementById("restNumber");
 let pDisplay = document.getElementById("pDisplay");
 let cardRandomNumber;
 let restNumber0;
+let resultTotal;
 let arrayCards = [];
-/*function cardAloneNumber() {
+function cardAloneNumber() {
   cardRandomNumber = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-  cardAlone.innerHTML = cardRandomNumber;
-  restNumber0 = 21 - cardRandomNumber;
 
+  pushCards();
+}
+
+function pushCards() {
+  arrayCards.push(cardRandomNumber);
+  cardAlone.innerHTML += arrayCards[arrayCards.length - 1] + " - ";
+  console.log(arrayCards);
+  resultTotal = arrayCards.reduce((a, b) => a + b, 0);
+  restNumber0 = 21 - resultTotal;
   if (restNumber0 > 0 && restNumber0 <= 12) {
     restNumber.innerHTML = restNumber0;
     pDisplay.innerHTML = "";
@@ -19,11 +27,16 @@ let arrayCards = [];
     restNumber.innerHTML = restNumber0;
     pDisplay.innerHTML = "Aún podés pedir otra carta sin riesgos!";
     pDisplay.style.color = "lightgreen";
+  } else if (restNumber0 === 0) {
+    pDisplay.innerHTML = "GANASTE!";
+    pDisplay.style.color = "darkgreen";
+  } else if (restNumber0 < 0) {
+    pDisplay.innerHTML = "PERDISTE!";
+    pDisplay.style.color = "darkred";
   }
-  arrayCards.push(cardRandomNumber);
-  console.log(cardRandomNumber);
-  console.log(arrayCards);
-}*/
+
+  console.log(resultTotal);
+}
 
 /*
 btnAlone.addEventListener("click", () => {

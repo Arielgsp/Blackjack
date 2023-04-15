@@ -9,7 +9,10 @@ let arrayCards = [];
 function addCards() {
   cardRandomNumber = Math.floor(Math.random() * (12 - 1 + 1) + 1);
   arrayCards.push(cardRandomNumber);
-  console.log(arrayCards); //funciona
+
+  log();
 }
 
-console.log(arrayCards); //no funciona
+function log() {
+  console.log(arrayCards); //no funciona
+}
