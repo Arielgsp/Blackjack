@@ -14,23 +14,28 @@ function cardAloneNumber() {
 
 function pushCards() {
   arrayCards.push(cardRandomNumber);
-  cardAlone.innerHTML += arrayCards[arrayCards.length - 1] + " - ";
+
   console.log(arrayCards);
   resultTotal = arrayCards.reduce((a, b) => a + b, 0);
   restNumber0 = 21 - resultTotal;
-  if (restNumber0 > 0 && restNumber0 <= 12) {
+  if (pDisplay.innerHTML == "PERDISTE!" || pDisplay.innerHTML == "GANASTE!") {
+  } else if (restNumber0 > 0 && restNumber0 <= 12) {
+    cardAlone.innerHTML += arrayCards[arrayCards.length - 1] + " - ";
     restNumber.innerHTML = restNumber0;
     pDisplay.innerHTML = "";
     pDisplay.innerHTML = "Cuidado que te podés pasar de 21!";
     pDisplay.style.color = "red";
   } else if (restNumber0 > 12) {
+    cardAlone.innerHTML += arrayCards[arrayCards.length - 1] + " - ";
     restNumber.innerHTML = restNumber0;
     pDisplay.innerHTML = "Aún podés pedir otra carta sin riesgos!";
     pDisplay.style.color = "lightgreen";
   } else if (restNumber0 === 0) {
+    cardAlone.innerHTML += arrayCards[arrayCards.length - 1];
     pDisplay.innerHTML = "GANASTE!";
     pDisplay.style.color = "darkgreen";
   } else if (restNumber0 < 0) {
+    cardAlone.innerHTML += arrayCards[arrayCards.length - 1];
     pDisplay.innerHTML = "PERDISTE!";
     pDisplay.style.color = "darkred";
   }
