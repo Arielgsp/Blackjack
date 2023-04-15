@@ -2,10 +2,13 @@ let cardAlone = document.getElementById("cardAlone");
 let btnAlone = document.getElementById("buttonAlone");
 let restNumber = document.getElementById("restNumber");
 let pDisplay = document.getElementById("pDisplay");
+let btnAloneReset = document.getElementById("buttonAloneReset");
 let cardRandomNumber;
 let restNumber0;
 let resultTotal;
 let arrayCards = [];
+
+restNumber.innerHTML = 21;
 function cardAloneNumber() {
   cardRandomNumber = Math.floor(Math.random() * (12 - 1 + 1) + 1);
 
@@ -26,7 +29,7 @@ function pushCards() {
     pDisplay.innerHTML = "Cuidado que te podés pasar de 21!";
     pDisplay.style.color = "red";
   } else if (restNumber0 > 12) {
-    cardAlone.innerHTML += arrayCards[arrayCards.length - 1] + " - ";
+    cardAlone.innerHTML += " " + arrayCards[arrayCards.length - 1] + " - ";
     restNumber.innerHTML = restNumber0;
     pDisplay.innerHTML = "Aún podés pedir otra carta sin riesgos!";
     pDisplay.style.color = "lightgreen";
@@ -42,6 +45,14 @@ function pushCards() {
 
   console.log(resultTotal);
 }
+
+btnAloneReset.addEventListener("click", () => {
+  cardAlone.innerHTML = " ";
+  pDisplay.innerHTML = " ";
+  arrayCards = [];
+  restNumber0 = 21 - resultTotal;
+  restNumber.innerHTML = 21;
+});
 
 /*
 btnAlone.addEventListener("click", () => {
