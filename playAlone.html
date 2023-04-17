@@ -5,22 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="styleAlone.css" />
   </head>
   <body>
     <h1>BLACKJACK GAME</h1>
 
     <button id="buttonAlone" onclick="cardAloneNumber()">Saca una carta</button>
-    <button id="buttonAloneReset" onclick="btnAloneReset()">
+    <!--<button id="buttonAloneReset" onclick="btnAloneReset()">
       Volvé a jugar
-    </button>
-    <p>Te salió la carta Número:</p>
-    <p id="cardAlone">Cartas Previas:</p>
+    </button>-->
+    <p id="cardOne">Te salió la carta Número:</p>
+    <p id="cardAlone">Cartas Totales:</p>
 
     <p>Necesitas sumar: <span id="restNumber"></span> puntos para ganar!</p>
 
     <p>Probamos suerte?</p>
 
     <p id="pDisplay"></p>
+
+    <div id="messageLost">
+      <h1>PERDISTE!</h1>
+      <button id="buttonAloneReset">Volver a jugar?</button>
+    </div>
+
+    <div id="messageWin">
+      <h1>GANASTE!</h1>
+      <button id="buttonAloneResetWin">Volver a jugar?</button>
+    </div>
+
+    <button onclick="location.href=`index.html`">
+      Volvé a la pantalla principal
+    </button>
 
     <script src="index.js"></script>
   </body>

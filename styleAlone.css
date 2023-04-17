@@ -1,0 +1,41 @@
+body {
+  background-image: url(img/background-blackjackAlone2.jpg);
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  padding-top: 70px;
+  font-family: Helvetica;
+
+  font-weight: bold;
+}
+
+h1 {
+  color: goldenrod;
+}
+
+h2 {
+  color: red;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+#messageLost,
+#messageWin {
+  border: 1px solid black;
+  text-align: center;
+  width: 400px;
+  height: 200px;
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: rgb(50, 54, 54);
+}
